@@ -7,7 +7,7 @@ if (typeof auto_cookie_version != "undefined")
 	throw 'Already loaded.';
 
 // Variables
-var auto_cookie_version = "v.1.0413";
+var auto_cookie_version = "v.1.0453";
 var rec_id = 0;
 var all_price = 0;
 
@@ -76,34 +76,5 @@ setInterval(function(){
 	buyall_btn.innerText = "Buy All ("+Beautify(all_price)+")";
 }, 100);
 
-// Beautify number
-var T = ["","M","B","Tr","Qa","Qi","Sx","Sp","Oc","No","Dc"];
-function Beautify(what, floats){
-	if(!isFinite(what)) return "Infinity";
-	var lv = 0;
-	var n = what;
-	if(n >= 1000000){
-		lv += 1;
-		n = Math.round(n/1000)/1000;
-		while(n >= 1000){
-			lv += 1;
-			n = Math.round(n)/1000;
-		}
-	}else if(n >= 1000){
-		var d = Math.round(n%1000).toString();
-		while (d.length < 3) d = '0'+d;
-		return Math.floor(n/1000)+","+d;
-	}else{
-		floats = floats || 0;
-		var _10 = Math.pow(10, floats);
-		return Math.round(n*_10)/_10;
-	}
-	return n+T[lv];
-}
-
-// Reset
-Game.RebuildStore();
-Game.RebuildUpgrades();
-
 // All Over
-Game.Popup("Auto Cookie "+auto_cookie_version+" Start!");
+Game.Notify("Auto Cookie "+auto_cookie_version+" Start!");
