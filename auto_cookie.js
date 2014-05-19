@@ -11,7 +11,7 @@ if (typeof auto_cookie_version != "undefined") {
 function cl(tag, className) { var e = document.createElement(tag); e.className = className; return e; };	
 
 // Variables
-var auto_cookie_version = "v.1.0453";
+var auto_cookie_version = "v.1.0463";
 var product_recommend = [], upgrade_recommend = [];
 var upgrade_zero_eff_num = 0;
 var best_id = 0;
@@ -354,7 +354,7 @@ Game.Draw = function() {
 	e.style.fontSize = "50%";
 	l('cookies').appendChild(e);
 	
-	if (Game.drawT%10 < 2)
+	if (Game.drawT % 2 == 1)
 	{
 		for (var i in Game.Objects)
 		{
