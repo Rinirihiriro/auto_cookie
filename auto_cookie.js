@@ -11,7 +11,7 @@ if (typeof auto_cookie_version != "undefined") {
 function cl(tag, className) { var e = document.createElement(tag); e.className = className; return e; };	
 
 // Variables
-var auto_cookie_version = "v.1.0463";
+var auto_cookie_version = "v.1.0464b";
 var product_recommend = [], upgrade_recommend = [];
 var upgrade_zero_eff_num = 0;
 var best_id = 0;
